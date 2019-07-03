@@ -5,8 +5,6 @@ FileScout is a program that act as a FIM (File Integrity Monitor) for any Unix s
 (AIX, HP-UX, Solaris, Linux).  It will record any changes to files in the built-in log
 file filescout.log.
 
-```
-
 Obtaining FileScout
 ===================
 
