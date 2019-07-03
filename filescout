@@ -1,0 +1,285 @@
+#!/usr/bin/perl
+#
+# filescout - Perl script to monitor changes in files.
+# 
+# $Id: filescout  v1.1  07/02/19 22:37:59  rocklandlabs Exp $
+#
+# Copyright (C) 2008-19 Rockland Labs, LLC   All rights reserved.
+# This is free software with ABSOLUTELY NO WARRANTY.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either versions 2, or (at your option)
+# any later version.
+# 
+# This program is distributed in the hope that it will be useful
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+# 02111-1307, USA
+#
+
+#-----------------------------------------------------------------------------
+# Variables and include.
+#-----------------------------------------------------------------------------
+
+# Version.
+my $version = "1.1";
+printf ("$0 Version $version\n");
+
+# No changes have been made yet.
+my $changes = 0;
+
+#@@@@@@@
+#@@@@@@@ Configurations to be changed by the user.
+#@@@@@@@
+#
+# config_ = What the name of and where the configuration file is kept.
+my $config_path = ".";
+my $config_file = "$config_path/filescout.conf";
+# db_ = What the name and location of the database file is (or files are).
+my $db_path = ".";
+my $db_file = "$db_path/filescout";
+# log- = What the name and location of the verbose log file is.
+my $log_path = ".";
+my $log_file = "$log_path/filescout.log";
+# db_type = dbm or text for the type of database file
+my $db_type = "text";
+
+#-----------------------------------------------------------------------------
+# Routines.
+#-----------------------------------------------------------------------------
+
+# Obtain the CheckSum for the file.
+sub CheckSum {
+    
+    # Get the file name.
+    my $filename = $_ [0];
+
+    # Clear out the previous CheckSum.
+    my $CheckSum = 0;
+
+    # Make sure the file exists.
+    if (-f "$filename") {
+        my $infile = "";
+        open ($infile, "< $filename");
+        # Yes the 31 is correct below.
+        undef ($/);
+        $CheckSum += unpack ("%32C*", <$infile>) % 65535;
+        $CheckSum = ($CheckSum & 0xffff) + int ($CheckSum / 0x10000);
+        $CheckSum = ($CheckSum & 0xffff) + int ($CheckSum / 0x10000);
+        close ($infile);
+    };
+
+    # Return the CheckSum.
+    return ($CheckSum);
+
+};
+
+# Opon up the DBM file.
+sub OpenDB {
+
+    # Do the specific action based on whether the file is a text
+    # file or dbm file.
+    if ($db_type eq "text") {
+        # Read in the entire dbm.
+        printf ("Loading database file...\n");
+        %db = ();
+        my $infile;
+        open ($infile, "< $db_file" . ".db");          
+        while ($readline = <$infile>) { 
+	    chomp ($readline);
+            ($key, $value) = split ("###", $readline);
+            $db {$key} = $value;
+        };
+        close ($infile);
+    } elsif ($db_type eq "dbm") {
+        # Open the DBM file.
+    	dbmopen (%db, $db_file, 0644);
+    } else {
+        printf ("Database type is NOT text or dbm\n");
+        printf ("Done\n");
+        exit (1);
+    };
+
+};
+
+# Close the DBM file.
+sub CloseDB {
+
+    # Do the specific action based on whether the file is a text
+    # file or dbm file.
+    if ($db_type eq "text") {
+        # Write out the entire dbm.
+        printf ("Saving database file...\n");
+        my $outfile;
+        open ($outfile, "> $db_file" . ".db");
+        my @db_keys = keys (%db);
+        foreach $key (@db_keys) {
+            printf ($outfile "$key###" . $db {$key} . "\n");
+        };
+        close ($outfile);
+    } elsif ($db_type eq "dbm") {
+    	# Close the DBM file.
+	dbmclose (%config);  
+    } else {
+        printf ("Database type is NOT text or dbm\n");
+        printf ("Done\n");
+        exit (1);
+    };
+
+};
+
+# Log file routine.
+sub WriteLog {
+   
+    # Add the entry to the log file.
+    $message = @_ [0];
+    $now = localtime;
+    open (logfile, ">>$log_file");
+    printf (logfile "$now:  $message\n");
+    close (logfile);
+    
+    # Also print it to standard out.
+    printf ("$message\n");
+
+};
+
+# Load in the configuration file.
+sub LoadConfig {
+
+    # Make sure the file exists first.
+    if (! -f "$config_file") {
+	WriteLog ("Configuratin file $config_file does NOT exist");
+	printf ("Done\n");
+	exit (1);
+    };
+
+};
+
+# Get the current statistics on the file and see if it has change.
+sub CheckFile {
+
+    # Get the name of the file.
+    $file_name = @_ [0];
+    #printf ("Checking file $file_name...\n");
+
+    # Did the file exist previously?
+    if ($db {$file_name . ".exists"} eq "yes") {
+
+	# Does it still exist?
+	if (-f $file_name) {
+            my (undef, undef, $mode, undef, $uid, $gid, undef, $size, undef, $mtime, undef, undef, undef) = stat ($file_name);
+	    if ($db {$file_name . ".mode"} ne $mode) {
+		WriteLog ("File $file_name mode was " . $db {$file_name . ".mode"} . " and is now $mode");
+	        $db {$file_name . ".mode"} = $mode;
+	        $changes += 1;
+	    }; 
+	    if ($db {$file_name . ".uid"} ne $uid) {
+		WriteLog ("File $file_name uid was " . $db {$file_name . ".uid"} . " and is now $uid");
+	        $db {$file_name . ".uid"} = $uid;
+	        $changes += 1;
+	    }; 
+	    if ($db {$file_name . ".gid"} ne $gid) {
+		WriteLog ("File $file_name gid was " . $db {$file_name . ".gid"} . " and is now $gid");
+	        $db {$file_name . ".gid"} = $gid;
+	        $changes += 1;
+	    }; 
+	    if ($db {$file_name . ".size"} ne $size) {
+		WriteLog ("File $file_name size was " . $db {$file_name . ".size"} . " and is now $size");
+	        $db {$file_name . ".size"} = $size;
+	        $changes += 1;
+	    }; 
+	    if ($db {$file_name . ".mtime"} ne $mtime) {
+		WriteLog ("File $file_name mtime was " . $db {$file_name . ".mtime"} . " and is now $mtime");
+	        $db {$file_name . ".mtime"} = $mtime;
+	        $changes += 1;
+	    }; 
+	} else {
+	    WriteLog ("File $file_name does NOT exist - it has been removed");
+  	};
+
+    # Else it didn't exist, so does it exist now?
+    } elsif (-f $file_name) {
+
+	# Save the information about the file.
+	WriteLog ("File $file_name did NOT exist - it has been added");
+        my (undef, undef, $mode, undef, $uid, $gid, undef, $size, undef, $mtime, undef, undef, undef) = stat ($file_name);
+	$db {$file_name . ".exists"} = "yes";
+	$db {$file_name . ".mode"} = $mode;
+	$db {$file_name . ".uid"} = $uid;
+	$db {$file_name . ".gid"} = $gid;
+	$db {$file_name . ".size"} = $size;
+	$db {$file_name . ".mtime"} = $mtime;
+	$changes += 1;
+
+    # Else nothing happens for now.
+    } else {
+    };
+
+};
+
+# Now check all the files.
+sub CheckFiles {
+
+    # Now loop through all the files and see if anything has changed on them.
+    foreach $file (@file_list) {
+	CheckFile ($file);	
+    };
+
+};
+
+#-----------------------------------------------------------------------------
+# Main.
+#-----------------------------------------------------------------------------
+
+# Load in the configuration file.
+if (! -f "$config_file") {
+   WriteLog ("Configuratin file $config_file does NOT exist");
+   printf ("Done\n");
+   exit (1);
+};
+require ("$config_file");
+
+# Now set the file list according to the OS.
+$os = $^O;
+printf ("OS is $os\n");
+if ($os eq "aix") {
+    @file_list = @file_list_aix;
+} elsif ($os eq "hpux") {
+    @file_list = @file_list_hpux;
+} elsif ($os eq "linux") {
+    @file_list = @file_list_linux;
+} elsif ($os eq "solaris") {
+    @file_list = @file_list_solaris;
+} else {
+    WriteLog ("OS $os not supported by this script");
+    printf ("Done\n");
+    exit (1);
+};
+
+# Now open the database.
+OpenDB ();
+
+# Now check the files.
+WriteLog ("Starting scan...");
+CheckFiles ();
+WriteLog ("... scan complete.");
+
+# Lastly close the database.
+CloseDB ();
+
+# See if any files have changed.
+if ($changes == 0) {
+    WriteLog ("No files have changed");
+} else {
+    WriteLog ("Found $changes changes to file(s)");
+};
+
+# Done.
+printf ("Done\n");
+exit (0);

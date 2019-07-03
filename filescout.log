@@ -1,0 +1,137 @@
+Wed Apr 29 14:58:33 2009:  File /etc/.login did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/passwd did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/auto_home did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/auto_master did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/cron.d/at.allow did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/cron.d/cron.allow did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/cron.d/cron.deny did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/default/cron did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/default/ftpd did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/default/inetinit did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/default/login did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/default/passwd did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/default/su did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/default/telnetd did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/defaultdomain did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/defaultrouter did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/dfs/dfstab did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/dfs/sharetab did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/dumpadm.conf did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/ftpusers did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/hosts did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/inet/inetd.conf did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/inet/ntp.client did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/inet/ntp.conf did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/inet/services did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/issue did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/mail/aliases did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/mail/sendmail.cf did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/motd did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/netmasks did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/nodename did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/nscd.conf did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/nsswitch.conf did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/pam.conf did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/path_to_inst did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/profile did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/project did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/resolv.conf did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/skel/.profile did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/skel/profile.chgmgmt did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/skel/profile.harvest did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/skel/profile.master did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/skel/profile.netadmin did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/skel/profile.operator did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/skel/profile.oracle did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/skel/profile.plat did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/skel/profile.project did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/skel/profile.stgmgmt did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/syslog.conf did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/system did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /etc/vfstab did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  File /home/w951a53/.profile did NOT exist - it has been added
+Wed Apr 29 14:58:33 2009:  Found 52 changes to file(s)
+
+Wed Apr 29 15:12:54 2009:  File /etc/.login did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/passwd did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/auto_home did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/auto_master did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/cron.d/at.allow did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/cron.d/cron.allow did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/cron.d/cron.deny did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/default/cron did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/default/ftpd did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/default/inetinit did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/default/login did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/default/passwd did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/default/su did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/default/telnetd did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/defaultdomain did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/defaultrouter did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/dfs/dfstab did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/dfs/sharetab did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/dumpadm.conf did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/ftpusers did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/hosts did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/inet/inetd.conf did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/inet/ntp.client did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/inet/ntp.conf did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/inet/services did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/issue did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/mail/aliases did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/mail/sendmail.cf did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/motd did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/netmasks did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/nodename did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/nscd.conf did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/nsswitch.conf did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/pam.conf did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/path_to_inst did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/profile did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/project did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/resolv.conf did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/skel/.profile did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/skel/profile.chgmgmt did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/skel/profile.harvest did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/skel/profile.master did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/skel/profile.netadmin did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/skel/profile.operator did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/skel/profile.oracle did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/skel/profile.plat did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/skel/profile.project did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/skel/profile.stgmgmt did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/syslog.conf did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/system did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /etc/vfstab did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  File /home/w951a53/.profile did NOT exist - it has been added
+Wed Apr 29 15:12:54 2009:  Found 52 files have changed
+Wed Apr 29 15:13:19 2009:  No files have changed
+Wed Apr 29 15:15:08 2009:  No files have changed
+Wed Apr 29 15:15:52 2009:  No files have changed
+Wed Apr 29 15:16:30 2009:  Starting scan...
+Wed Apr 29 15:16:30 2009:  No files have changed
+Wed Apr 29 15:16:51 2009:  Starting scan...
+Wed Apr 29 15:16:51 2009:  No files have changed
+Wed Apr 29 15:17:54 2009:  Starting scan...
+Wed Apr 29 15:17:54 2009:  ... scan complete.
+Wed Apr 29 15:17:54 2009:  No files have changed
+Wed Apr 29 15:18:06 2009:  Starting scan...
+Wed Apr 29 15:18:06 2009:  File /etc/passwd did NOT exist - it has been added
+Wed Apr 29 15:18:06 2009:  File /etc/auto_home did NOT exist - it has been added
+Wed Apr 29 15:18:06 2009:  File /etc/auto_master did NOT exist - it has been added
+Wed Apr 29 15:18:06 2009:  ... scan complete.
+Wed Apr 29 15:18:06 2009:  Found 3 changes to file(s)
+Wed Apr 29 20:50:19 2009:  Configuratin file ./filescout.conf does NOT exist
+Sat Feb 17 12:56:06 2018:  Configuratin file ./filescout.conf does NOT exist
+Sat Feb 17 12:56:24 2018:  Starting scan...
+Sat Feb 17 12:56:24 2018:  File /etc/passwd mode was 33060 and is now 33188
+Sat Feb 17 12:56:24 2018:  File /etc/passwd size was 55001 and is now 1166
+Sat Feb 17 12:56:24 2018:  File /etc/passwd mtime was 1241029212 and is now 1504375303
+Sat Feb 17 12:56:24 2018:  ... scan complete.
+Sat Feb 17 12:56:24 2018:  Found 3 changes to file(s)
+Sat Feb 17 12:56:28 2018:  Starting scan...
+Sat Feb 17 12:56:28 2018:  ... scan complete.
+Sat Feb 17 12:56:28 2018:  No files have changed
+Sat Feb 17 12:56:29 2018:  Starting scan...
+Sat Feb 17 12:56:29 2018:  ... scan complete.
+Sat Feb 17 12:56:29 2018:  No files have changed

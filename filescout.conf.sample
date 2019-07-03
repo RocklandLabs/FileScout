@@ -1,0 +1,56 @@
+#!/usr/local/bin/perl
+#
+# filescout.conf - Configuration file for perl script filescount.
+# 
+# $Id: filescout.conf  v1.1  04/29/09 15:18:40  rocklandlabs Exp $
+#
+# Copyright (C) 2008-19 Rockland Labs, LLC   All rights reserved.
+#     This is free software with ABSOLUTELY NO WARRANTY.
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either versions 2, or (at your option)
+#  any later version.
+# 
+#  This program is distributed in the hope that it will be useful
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+#  02111-1307, USA
+#
+
+# Files to watch for AIX.
+@file_list_aix = (
+"/etc/cronlog.conf",
+"/etc/filesystems",
+);
+
+@file_list_hpux = (
+"/etc/passwd",
+"/sbin/init.d/cron",
+);
+
+@file_list_linux = (
+"/etc/passwd",
+);
+
+# Files to watch for Solaris.
+@file_list_solaris = (
+"/etc/passwd",
+"/etc/auto_direct",
+"/etc/auto_home",
+"/etc/auto_master",
+);
+
+@exception_list = (
+);
+
+@exist_list = (
+"/etc/rc2.d/S88sendmail",
+);
+
+1;

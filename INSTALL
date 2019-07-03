@@ -1,0 +1,30 @@
+Basic Installation
+==================
+
+To install FileScout, copy the script to a location and make it 
+executable
+
+  $ mkdir /usr/local/fim
+  $ cp filescout filescout.conf /usr/local/fim
+  $ chmod +x /usr/local/fim/filescout
+
+Then you are ready to run it:
+
+  $ cd /usr/local/fim
+  $ ./filescout
+  ./filescout Version 1.1
+  OS is linux
+  Loading database file...
+  Starting scan...
+  File /etc/passwd size was 1166 and is now 1332
+  File /etc/passwd mtime was 1504375303 and is now 1519866756
+  ... scan complete.
+  Saving database file...
+  Found 2 changes to file(s)
+  Done
+
+Modify the lines below to move where the files are located:
+
+  $config_path - Where the files are located
+  $db_path - Where the database files are located when run
+  $log_path - Where the log files are kept when run
